@@ -14,6 +14,12 @@
         Icon="/Assets/icon.ico"
         mc:Ignorable="d">
     <Grid RowDefinitions="*,25">
+        <Grid Margin="15">
+            <StackPanel>
+                <Button Command="{Binding CreateMod}" Content="Create Mod" />
+                <TextBlock Text="Create Mod" />
+            </StackPanel>
+        </Grid>
         <Grid Grid.Row="1"
               Background="{DynamicResource SystemBaseLowColor}"
               ColumnDefinitions="Auto,*,Auto"

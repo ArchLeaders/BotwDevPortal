@@ -1,4 +1,6 @@
-﻿namespace BotwDevPortal.ViewModels;
+﻿using Avalonia.Generics.Dialogs;
+
+namespace BotwDevPortal.ViewModels;
 
 public class ShellViewModel : ReactiveObject
 {
@@ -14,5 +16,10 @@ public class ShellViewModel : ReactiveObject
     public string Mod {
         get => _mod;
         set => this.RaiseAndSetIfChanged(ref _mod, value);
+    }
+
+    public async Task CreateMod()
+    {
+        await MessageBox.ShowDialog("Hello World!", "Agggghhhh");
     }
 }
