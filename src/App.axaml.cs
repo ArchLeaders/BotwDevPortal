@@ -22,6 +22,10 @@ public partial class App : Application
                 .WithWindowColors("SystemChromeLowColor", "SystemBaseLowColor", chromeOpacity: 0.5)
                 .Build();
 
+#if DEBUG
+            desktop.MainWindow.AttachDevTools();
+#endif
+
             ShellView.ViewModel.Mod = desktop.Args?.FirstOrDefault(Directory.GetCurrentDirectory())!;
         }
 
