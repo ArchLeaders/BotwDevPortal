@@ -37,4 +37,14 @@ public class ShellViewModel : ReactiveObject
             Mod = path;
         }
     }
+
+    public async Task BuildMod()
+    {
+
+    }
+
+    public async Task GenerateRSTB()
+    {
+
+    }
 }
