@@ -11,13 +11,14 @@ public partial class App : Application
 {
     public static string Title { get; set; } = "Botw Developer Portal";
     public static string Version { get; } = typeof(App).Assembly.GetName().Version?.ToString(3) ?? "-.-.-";
-    public ShellView ShellView { get; set; } = new();
+    public static ShellView ShellView { get; private set; } = default!;
 
     public override void Initialize() => AvaloniaXamlLoader.Load(this);
 
     public override void OnFrameworkInitializationCompleted()
     {
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop) {
+            ShellView = new();
             desktop.MainWindow = WindowBuilder.Initialize(ShellView)
                 .WithWindowColors("SystemChromeLowColor", "SystemBaseLowColor", chromeOpacity: 0.5)
                 .Build();
