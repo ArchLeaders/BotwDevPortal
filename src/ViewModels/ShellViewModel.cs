@@ -28,4 +28,13 @@ public class ShellViewModel : ReactiveObject
             // Create Mod
         }
     }
+
+    public async Task OpenMod()
+    {
+        BrowserDialog dialog = new(BrowserMode.OpenFolder, "Open Mod Folder", instanceBrowserKey: "OpenMod");
+        string? path = await dialog.ShowDialog();
+        if (path != null) {
+            Mod = path;
+        }
+    }
 }
