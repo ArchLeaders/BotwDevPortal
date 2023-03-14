@@ -14,11 +14,31 @@
         Icon="/Assets/icon.ico"
         mc:Ignorable="d">
     <Grid RowDefinitions="*,25">
-        <Grid Margin="15">
-            <StackPanel>
-                <Button Command="{Binding CreateMod}" Content="Create Mod" />
-                <TextBlock Text="Create Mod" />
-            </StackPanel>
+        <Grid ColumnDefinitions="Auto,*">
+            <Border MinWidth="200"
+                    Margin="0,10"
+                    Background="{DynamicResource SystemChromeLowColor}"
+                    BorderBrush="{DynamicResource SystemBaseLowColor}"
+                    BorderThickness="0,0,1,0">
+                <Border.Styles>
+                    <Style Selector="Button">
+                        <Setter Property="HorizontalAlignment" Value="Stretch" />
+                        <Setter Property="HorizontalContentAlignment" Value="Center" />
+                    </Style>
+                </Border.Styles>
+                <Grid Margin="20,10" RowDefinitions="*,Auto">
+                    <StackPanel Spacing="10">
+                        <Button Command="{Binding CreateMod}" Content="Create Mod" />
+                        <Button Command="{Binding OpenMod}" Content="Open Mod" />
+                        <Border Height="1" Background="{DynamicResource SystemBaseLowColor}" />
+                        <Button Command="{Binding BuildMod}" Content="Build Mod" />
+                        <Button Command="{Binding GenerateRSTB}" Content="Generate RSTB" />
+                    </StackPanel>
+                    <StackPanel Grid.Row="1" Spacing="10">
+                        <Button Content="Settings" />
+                    </StackPanel>
+                </Grid>
+            </Border>
         </Grid>
         <Grid Grid.Row="1"
               Background="{DynamicResource SystemBaseLowColor}"
