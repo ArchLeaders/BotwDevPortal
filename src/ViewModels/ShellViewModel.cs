@@ -20,6 +20,12 @@ public class ShellViewModel : ReactiveObject
 
     public async Task CreateMod()
     {
-        await MessageBox.ShowDialog("Hello World!", "Agggghhhh");
+        var result = await InputDialog.ShowDialog(new() {
+            { "Name", string.Empty }
+        }, "Create New Mod");
+
+        if (result != null) {
+            // Create Mod
+        }
     }
 }
